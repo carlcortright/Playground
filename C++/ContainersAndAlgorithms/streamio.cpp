@@ -6,7 +6,7 @@ using namespace std;
 * Basic printing of an integer to the output stream
 */
 void f(){
-  int i {10}
+  int i {10};
   cout << 10;
 }
 
@@ -57,11 +57,12 @@ void hello2() {
 /*
 * User defined type to perform io on
 */
-struct Entry{
+class Entry{
   string name;
   int number;
-
-  ostream& operator<<(ostream& os, const Entry& e){
+public:
+  Entry(string name, int number): name{name}, number{number} {}
+  friend ostream& operator<<(ostream& os, const Entry& e){
     return os << "{\"" << e.name << "\"," << e.number << "}";
   }
 };
