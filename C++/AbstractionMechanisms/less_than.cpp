@@ -5,7 +5,7 @@
 * initialized object.
 *
 * Functors like this one carry the value that is to be compared against with
-* them. 
+* them.
 */
 template<typename T>
 class Less_than{
@@ -13,4 +13,4 @@ class Less_than{
 public:
   Less_than(const T& v) :val(v) {}
   bool operator()(const T& x) const { return x<val; }
-}
+};

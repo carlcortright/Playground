@@ -14,10 +14,10 @@ public:
   Shape(const Shape&) =delete;
   Shape& operator=(const Shape&) =delete; // =delete suppresses any operation
 
-  
+
 
   virtual ~Shape() {}
-}
+};
 
 class Circle : public Shape {
 public:
@@ -32,4 +32,10 @@ public:
 private:
   Point x;
   int r;
-}
+};
+
+class Point{
+double x,y;
+public:
+  Point(int x, int y): x{x}, y{y} {}
+};
