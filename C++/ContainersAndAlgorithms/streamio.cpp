@@ -52,17 +52,3 @@ void hello2() {
   getline(cin, name);
   cout << "Hello, " << name;
 }
-
-
-/*
-* User defined type to perform io on
-*/
-class Entry{
-  string name;
-  int number;
-public:
-  Entry(string name, int number): name{name}, number{number} {}
-  friend ostream& operator<<(ostream& os, const Entry& e){
-    return os << "{\"" << e.name << "\"," << e.number << "}";
-  }
-};
