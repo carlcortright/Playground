@@ -5,6 +5,7 @@ all:
 	g++ -std=c++11 -o range_check.o -c range_check.cpp
 	g++ -std=c++11 -o lists.o -c lists.cpp
 	g++ -std=c++11 -o maps.o -c maps.cpp
-	c++ -std=c++11 -o unordered_maps.o -c unordered_maps.cpp
+	g++ -std=c++11 -o unordered_maps.o -c unordered_maps.cpp
+	g++ -std=c++11 -o sorts.o -c sorts.cpp
 clean:
 	rm *.o
