@@ -7,5 +7,6 @@ all:
 	g++ -std=c++11 -o maps.o -c maps.cpp
 	g++ -std=c++11 -o unordered_maps.o -c unordered_maps.cpp
 	g++ -std=c++11 -o sorts.o -c sorts.cpp
+	g++ -std=c++11 -o iterators.o -c iterators.cpp
 clean:
 	rm *.o
