@@ -36,4 +36,4 @@ axis([tval(1)-dt/2,tval(end)+dt/2,yval(1)-dy/2,yval(end)+dy/2])
 
 title(plot_title,'FontSize',22);
 xlabel('t values','FontSize',16);
-ylabel('y values','FontSize',16);
+ylabel('x values','FontSize',16);
