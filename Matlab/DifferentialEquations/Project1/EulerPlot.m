@@ -28,4 +28,6 @@ h4 = 0.01;
 plot(t_sol1, x_sol1, 'x', t_sol2, x_sol2, 'r*', t_sol3, x_sol3, '--', t_sol4, x_sol4, 'b:')
 title('Euler Approximations')
 legend('h = 3', 'h = 1', 'h = 0.1', 'h = 0.01')
+xlabel('t','FontSize',16);
+ylabel('x','FontSize',16);
 
