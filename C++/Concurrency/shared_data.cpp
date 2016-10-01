@@ -3,6 +3,8 @@
 */
 #include <mutex>
 
+using namespace std;
+
 mutex m;
 mutex m1;
 mutex m2;
@@ -16,8 +18,8 @@ void f(){
 
 void f2(){
   unique_lock<mutex> lck1 {m1, defer_lock};
-  unique_lock<mutex> lck1 {m2, defer_lock};
-  unique_lock<mutex> lck1 {m3, defer_lock};
+  unique_lock<mutex> lck2 {m2, defer_lock};
+  unique_lock<mutex> lck3 {m3, defer_lock};
 
   lock(lck1, lck2, lck3); // Prevents process deadlock with multiple mutexes
 }
