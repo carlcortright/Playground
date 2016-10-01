@@ -3,6 +3,8 @@
 */
 #include <future>
 
+using namespace std;
+
 struct X{}; // Placeholder struct
 
 /*

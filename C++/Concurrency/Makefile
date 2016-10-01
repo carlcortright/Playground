@@ -3,5 +3,6 @@ all:
 	g++ -std=c++11 -o threads.o -c threads.cpp
 	g++ -std=c++11 -o shared_data.o -c shared_data.cpp
 	g++ -std=c++11 -o producer_consumer.o -c producer_consumer.cpp
+	g++ -std=c++11 -o future.o -c future.cpp
 clean:
 	rm *.o
