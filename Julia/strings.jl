@@ -49,5 +49,30 @@ println(repeat("hi ", 100))
 
 # Regex
 println("Testing Regex expressions:")
-myRegex = r"."
+myRegex = r".w"
 println(typeof(myRegex))
+println(ismatch(myRegex, "hello world"))
+println(ismatch(myRegex, "no umbo"))
+
+# Match anything that would be a Julia comment
+commentr = r"^\s*(?:#|$)"
+testline = "# hello"
+m = match(commentr, testline)
+if m === nothing
+  println("\"$testline\" is not a comment")
+else
+  println("\"$testline\" is a comment")
+  println("Offest is " * string(m.offset))
+end
+
+# Playing with byte array literals
+barr = b"hello world"
+println(barr[1])
+println(barr)
+
+# Identifying version numbers
+if v"0.2" <= VERSION <= v"0.8"
+  println("We have an acceptable Julia version!")
+end
+
+println("Our Julia version is " * string(VERSION))
