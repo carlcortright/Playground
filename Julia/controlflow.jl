@@ -85,3 +85,61 @@ end
 
 # Playing with exceptions
 type weirderror <: Exception end
+f(x) = x >= 0 ? exp(-x) : throw(DomainError)
+f(1)
+
+# Error stops execution immediately
+fuzzy_sqrt(x) = x >= 0 ? sqrt(x) : error("x must be positive")
+fuzzy_sqrt(1)
+warn("we are plaing with errors")
+info("here's some extra info to help you diagnose what's happening")
+
+function g(x)
+  try
+    sqrt(x)
+  catch
+    sqrt(complex(x,0))
+  end
+end
+println(g(1))
+println(g(-1))
+
+# Try-catch statements will also save the type of error to a variable.
+try
+  sqrt(-1)
+catch y
+  if isa(y, DomainError)
+    println("Found the problem")
+  end
+end
+
+# Julia also includes finally blocks
+try
+  sqrt(-1)
+catch
+  println("handling the exception")
+finally
+  println("executing the finally")
+end
+
+# Using tasks to solve the producer/consumer problem
+function producer()
+  produce("start")
+  for i in 1:4
+    produce(i)
+  end
+  produce("end")
+end
+p = Task(producer)
+c = ""
+while c != "end"
+  c = consume(p)
+  println(c)
+end
+# A task is also an interable object
+for x in Task(producer)
+  println(x)
+end
+
+# This is all pretty powerful, but in reality, both produce and consume use
+# yeildto() to avoid race conditions and implement monitor-like behavior
