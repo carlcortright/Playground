@@ -5,6 +5,8 @@
 # Date: 1/1/2016
 #
 ===============================================================================#
+# Clear the workspace to avoid conflicts
+workspace()
 include("linkedlist.jl")
 
 using linkedlist

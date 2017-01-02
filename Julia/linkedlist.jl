@@ -107,6 +107,9 @@ function access{T}(list::DoubleLinkedList{T}, position::Int)::T
   return current.data
 end
 
+#
+# Gets the size of the list
+#
 function listsize{T}(list::DoubleLinkedList{T})
   return list.size
 end
