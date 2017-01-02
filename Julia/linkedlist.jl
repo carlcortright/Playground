@@ -8,6 +8,8 @@
 
 module linkedlist
 
+export DoubleLinkedList, append, insert, remove, listsize, access
+
 #
 # Each node in the linked list represents some data
 #
@@ -68,6 +70,7 @@ function insert{T}(list::DoubleLinkedList{T}, data::T, position::Int)::Node{T}
   current.prev.next = insertNode
   current.prev = insertNode
   list.size += 1
+  return insertNode
 end
 
 #
@@ -91,7 +94,7 @@ end
 #
 # Gets the data from the node at position
 #
-function get{T}(list::DoubleLinkedList{T}, position::Int)::T
+function access{T}(list::DoubleLinkedList{T}, position::Int)::T
   if position > list.size
     error("Attempting to access position $position which is out of range.")
   end
@@ -102,7 +105,7 @@ function get{T}(list::DoubleLinkedList{T}, position::Int)::T
   return current.data
 end
 
-function length{T}(list::DoubleLinkedList{T})
+function listsize{T}(list::DoubleLinkedList{T})
   return list.size
 end
 
