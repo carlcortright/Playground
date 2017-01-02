@@ -6,6 +6,8 @@
 #
 ===============================================================================#
 
+__precompile__()
+
 module linkedlist
 
 export DoubleLinkedList, append, insert, remove, listsize, access
