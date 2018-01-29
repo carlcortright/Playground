@@ -1,0 +1,5 @@
+~~~ This file is a copy of random.txt ~~~
+
+This is a new line 
+hello!
+goodbye!

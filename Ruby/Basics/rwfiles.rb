@@ -12,3 +12,5 @@ f.truncate(0)
 f.write("This is a new line \n")
 f.write("hello!\n")
 f.write("goodbye!\n")
+
+f.close
