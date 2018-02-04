@@ -13,4 +13,14 @@ def func3()
     return 4
 end
 
-puts func3()
+puts func3
+
+# Intentionally misleading
+def minus(a, b)
+    return a - b
+end
+
+var1 = 10
+var2 = 30
+
+puts minus(var1 + 4,var2 - 9)
