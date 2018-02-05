@@ -10,3 +10,5 @@ puts(sorted_words)
 
 Ex25.print_first_word(sorted_words)
 Ex25.print_last_word(sorted_words)
+Ex25.print_first_and_last(sentence)
+Ex25.print_first_and_last_sorted(sentence)
