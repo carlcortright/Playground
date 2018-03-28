@@ -4,7 +4,7 @@ import './index.css';
 
 function Square(props) {
     return (
-        <button className="square" onClick={() => props.onClick()}>
+        <button className="square" onClick={props.onClick}>
             {props.value}
         </button>
     );
@@ -15,6 +15,7 @@ function Square(props) {
         super(props);
         this.state = {
             squares: Array(9).fill(null),
+            xisnext: true,
         };
     }
 
@@ -26,7 +27,13 @@ function Square(props) {
 
     handleClick(i) {
         const squares = this.state.squares.slice();
-        squares[i] = 'X';
+        if (this.state.xisnext) {
+            squares[i] = 'X';
+            this.setState({xisnext: false});
+        } else {
+            squares[i] = 'O';
+            this.setState({xisnext: true});
+        }
         this.setState({squares: squares});
     }
   
